@@ -1,37 +1,43 @@
-/**
- * ============================================================
- * MAIN CLASS - UseCase1TrainConsistMgmt
- * ============================================================
- *
- * Use Case 1: Initialize Train and Display Consist Summary
- *
- * Description:
- * This class represents the entry point of the Train Consist
- * Management Application.
- *
- * At this stage, the application:
- * - Creates an empty train consist
- * - Uses a dynamic List to store bogies
- * - Displays initial bogie count
- * - Prints the current state of the train
- *
- * This use case introduces collection initialization and
- * basic program startup flow.
- *
- * @HarshithKassetty
- * @version 1.0
- */
+import java.util.ArrayList;
+import java.util.List;
 
-public static void main(String[] args) {
+public class Train {
 
-    // Display welcome banner
-    System.out.println("==============================================");
-    System.out.println("   === Train Consist Management App === ");
-    System.out.println("==============================================\n");
 
-    // Create a dynamic list to store train bogies
-    List<String> trainConsist = new ArrayList<>();
 
-    // Display initial consist information
-    System.out.println("Train initialized successfully...");
+
+
+    public static void main(String[] args) {
+
+
+        System.out.println("=== Train Consist Management App ===");
+
+
+        List<String> passengerBogies = new ArrayList<>();
+
+
+        passengerBogies.add("Sleeper");
+        passengerBogies.add("AC Chair");
+        passengerBogies.add("First Class");
+
+
+        System.out.println("\nPassenger Bogies after addition:");
+        System.out.println(passengerBogies);
+
+
+        passengerBogies.remove("AC Chair");
+        System.out.println("\nAfter removing 'AC Chair':");
+        System.out.println(passengerBogies);
+
+
+        boolean exists = passengerBogies.contains("Sleeper");
+        System.out.println("\nDoes 'Sleeper' exist? " + exists);
+
+
+        System.out.println("\nFinal Passenger Bogie List:");
+        System.out.println(passengerBogies);
+
+
+        System.out.println("\nSystem ready for further operations.");
+    }
 }
